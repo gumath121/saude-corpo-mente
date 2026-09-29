@@ -1,1018 +1,1521 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Saúde Corpo & Mente | Clínica Integrada</title>
-
-    <meta name="description" content="Saúde Corpo & Mente - Acupuntura, Fisioterapia, Pilates, Osteopatia, Psicologia, Terapia, Podologia e Nutrição.">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
-
-    <style>
-
-        :root {
-            --verde: #527568;
-            --verde-escuro: #36584d;
-            --verde-claro: #e8f0ed;
-            --bege: #f8f5ef;
-            --texto: #26332f;
-            --cinza: #66716d;
-            --branco: #ffffff;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: 'DM Sans', sans-serif;
-            color: var(--texto);
-            background: var(--branco);
-            line-height: 1.6;
-        }
-
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-
-        .container {
-            width: min(1120px, 90%);
-            margin: auto;
-        }
-
-        /* HEADER */
-
-        header {
-            position: absolute;
-            width: 100%;
-            top: 0;
-            left: 0;
-            z-index: 10;
-            padding: 24px 0;
-        }
-
-        .nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-family: 'Playfair Display', serif;
-            font-size: 25px;
-            font-weight: 600;
-            color: var(--verde-escuro);
-        }
-
-        .logo span {
-            display: block;
-            font-family: 'DM Sans', sans-serif;
-            font-size: 11px;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            color: var(--verde);
-            margin-top: -4px;
-        }
-
-        .menu {
-            display: flex;
-            align-items: center;
-            gap: 30px;
-        }
-
-        .menu a {
-            font-size: 14px;
-            color: var(--texto);
-        }
-
-        .menu a:hover {
-            color: var(--verde);
-        }
-
-        .btn-header {
-            background: var(--verde);
-            color: white !important;
-            padding: 12px 21px;
-            border-radius: 30px;
-        }
-
-        /* HERO */
-
-        .hero {
-            min-height: 720px;
-            background: linear-gradient(
-                90deg,
-                #eef4f1 0%,
-                #f4f6f2 48%,
-                #e7eeea 100%
-            );
-            display: flex;
-            align-items: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero-content {
-            width: 55%;
-            padding-top: 70px;
-            position: relative;
-            z-index: 2;
-        }
-
-        .tag {
-            display: inline-block;
-            color: var(--verde);
-            font-size: 13px;
-            font-weight: 600;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-            margin-bottom: 20px;
-        }
-
-        .hero h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(48px, 6vw, 76px);
-            line-height: 1.05;
-            font-weight: 600;
-            color: var(--verde-escuro);
-            margin-bottom: 25px;
-        }
-
-        .hero h1 em {
-            color: var(--verde);
-            font-style: normal;
-        }
-
-        .hero p {
-            font-size: 18px;
-            max-width: 560px;
-            color: var(--cinza);
-            margin-bottom: 35px;
-        }
-
-        .buttons {
-            display: flex;
-            gap: 15px;
-            align-items: center;
-        }
-
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 15px 27px;
-            border-radius: 30px;
-            font-weight: 600;
-            font-size: 14px;
-            transition: .3s;
-        }
-
-        .btn-primary {
-            background: var(--verde);
-            color: white;
-        }
-
-        .btn-primary:hover {
-            background: var(--verde-escuro);
-            transform: translateY(-2px);
-        }
-
-        .btn-secondary {
-            border: 1px solid #aabbb4;
-            color: var(--verde-escuro);
-        }
-
-        .btn-secondary:hover {
-            background: white;
-        }
-
-        .hero-decoration {
-            position: absolute;
-            width: 520px;
-            height: 520px;
-            border-radius: 50%;
-            background: #dbe7e2;
-            right: -100px;
-            top: 100px;
-        }
-
-        .hero-card {
-            position: absolute;
-            right: 8%;
-            bottom: 80px;
-            width: 390px;
-            height: 470px;
-            border-radius: 200px 200px 20px 20px;
-            background: linear-gradient(
-                145deg,
-                #c8d8d1,
-                #91aaa0
-            );
-            overflow: hidden;
-            box-shadow: 0 30px 70px rgba(54, 88, 77, .15);
-        }
-
-        .hero-card::after {
-            content: "Cuidado • Equilíbrio • Bem-estar";
-            position: absolute;
-            bottom: 25px;
-            left: 25px;
-            right: 25px;
-            padding: 15px;
-            text-align: center;
-            border-radius: 12px;
-            background: rgba(255,255,255,.85);
-            color: var(--verde-escuro);
-            font-size: 12px;
-            letter-spacing: .5px;
-        }
-
-        /* SEÇÕES */
-
-        .intro {
-            padding: 100px 0;
-            text-align: center;
-        }
-
-        .section-label {
-            color: var(--verde);
-            font-size: 13px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 14px;
-        }
-
-        .intro h2,
-        .services h2,
-        .about h2,
-        .cta h2,
-        .contact h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(34px, 4vw, 50px);
-            line-height: 1.15;
-            color: var(--verde-escuro);
-            margin-bottom: 20px;
-        }
-
-        .intro p {
-            max-width: 700px;
-            margin: auto;
-            color: var(--cinza);
-            font-size: 17px;
-        }
-
-        /* SERVIÇOS */
-
-        .services {
-            background: var(--bege);
-            padding: 100px 0;
-        }
-
-        .services-heading {
-            display: flex;
-            justify-content: space-between;
-            align-items: end;
-            margin-bottom: 50px;
-        }
-
-        .services-heading p {
-            max-width: 430px;
-            color: var(--cinza);
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 18px;
-        }
-
-        .service-card {
-            background: white;
-            padding: 30px 25px;
-            border-radius: 18px;
-            min-height: 220px;
-            transition: .3s;
-        }
-
-        .service-card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 15px 35px rgba(50,80,70,.08);
-        }
-
-        .service-icon {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            background: var(--verde-claro);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 22px;
-            margin-bottom: 22px;
-        }
-
-        .service-card h3 {
-            font-size: 18px;
-            margin-bottom: 10px;
-            color: var(--verde-escuro);
-        }
-
-        .service-card p {
-            font-size: 14px;
-            color: var(--cinza);
-        }
-
-        /* SOBRE */
-
-        .about {
-            padding: 110px 0;
-        }
-
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 80px;
-            align-items: center;
-        }
-
-        .about-image {
-            height: 500px;
-            border-radius: 20px;
-            background: linear-gradient(
-                145deg,
-                #d9e4df,
-                #a7bdb4
-            );
-        }
-
-        .about-text p {
-            color: var(--cinza);
-            margin-bottom: 20px;
-        }
-
-        .benefits {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-            margin-top: 35px;
-        }
-
-        .benefit {
-            display: flex;
-            gap: 12px;
-            align-items: center;
-            font-weight: 600;
-            font-size: 14px;
-        }
-
-        .check {
-            width: 28px;
-            height: 28px;
-            border-radius: 50%;
-            background: var(--verde-claro);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--verde);
-            font-weight: bold;
-        }
-
-        /* CTA */
-
-        .cta {
-            padding: 90px 0;
-            background: var(--verde-escuro);
-            color: white;
-            text-align: center;
-        }
-
-        .cta h2 {
-            color: white;
-        }
-
-        .cta p {
-            max-width: 600px;
-            margin: 0 auto 30px;
-            color: #d7e3df;
-        }
-
-        .cta .btn {
-            background: white;
-            color: var(--verde-escuro);
-        }
-
-        /* CONTATO */
-
-        .contact {
-            padding: 80px 0;
-            text-align: center;
-        }
-
-        .phones {
-            margin-top: 25px;
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            flex-wrap: wrap;
-        }
-
-        .phone {
-            font-size: 18px;
-            font-weight: 600;
-            color: var(--verde-escuro);
-        }
-
-        /* FOOTER */
-
-        footer {
-            background: #263d35;
-            color: #dce5e1;
-            padding: 25px 0;
-            text-align: center;
-            font-size: 13px;
-        }
-
-        /* WHATSAPP */
-
-        .whatsapp {
-            position: fixed;
-            right: 25px;
-            bottom: 25px;
-            width: 58px;
-            height: 58px;
-            border-radius: 50%;
-            background: #25D366;
-            color: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 25px;
-            box-shadow: 0 8px 25px rgba(0,0,0,.2);
-            z-index: 20;
-        }
-
-        /* MOBILE */
-
-        @media (max-width: 900px) {
-
-            .menu {
-                display: none;
-            }
-
-            .hero {
-                min-height: auto;
-                padding: 130px 0 70px;
-            }
-
-            .hero-content {
-                width: 100%;
-            }
-
-            .hero-card {
-                display: none;
-            }
-
-            .hero-decoration {
-                width: 300px;
-                height: 300px;
-                right: -180px;
-                top: 120px;
-            }
-
-            .services-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-
-            .about-grid {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
-
-            .about-image {
-                height: 350px;
-            }
-
-            .services-heading {
-                display: block;
-            }
-
-            .services-heading p {
-                margin-top: 15px;
-            }
-        }
-
-        @media (max-width: 600px) {
-
-            .hero h1 {
-                font-size: 45px;
-            }
-
-            .hero p {
-                font-size: 16px;
-            }
-
-            .buttons {
-                flex-direction: column;
-                align-items: stretch;
-            }
-
-            .btn {
-                width: 100%;
-            }
-
-            .services-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .benefits {
-                grid-template-columns: 1fr;
-            }
-
-            .intro,
-            .services,
-            .about {
-                padding: 75px 0;
-            }
-
-            .logo {
-                font-size: 21px;
-            }
-        }
-
-    </style>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Saúde Corpo & Mente | Clínica Integrada</title>
+
+<meta name="description"
+content="Saúde Corpo & Mente - Cuidado integrado para corpo e mente. Acupuntura, Fisioterapia, Pilates, Osteopatia, Psicologia, Terapia, Podologia e Nutrição.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+
+--verde:#36766c;
+--verde-escuro:#1f5049;
+--verde-claro:#e8f3f0;
+
+--bege:#f8f6f1;
+--bege2:#eeeae1;
+
+--texto:#263633;
+--cinza:#687672;
+
+--branco:#ffffff;
+
+}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+
+font-family:'DM Sans',sans-serif;
+
+color:var(--texto);
+
+background:white;
+
+line-height:1.6;
+
+}
+
+a{
+text-decoration:none;
+color:inherit;
+}
+
+.container{
+
+width:min(1150px,90%);
+
+margin:auto;
+
+}
+
+/* =========================
+HEADER
+========================= */
+
+header{
+
+position:absolute;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+z-index:20;
+
+padding:20px 0;
+
+}
+
+.nav{
+
+display:flex;
+
+align-items:center;
+
+justify-content:space-between;
+
+}
+
+.logo{
+
+display:flex;
+
+align-items:center;
+
+}
+
+.logo img{
+
+width:105px;
+
+height:auto;
+
+}
+
+.menu{
+
+display:flex;
+
+align-items:center;
+
+gap:30px;
+
+}
+
+.menu a{
+
+font-size:14px;
+
+font-weight:500;
+
+color:#24443e;
+
+transition:.3s;
+
+}
+
+.menu a:hover{
+
+color:var(--verde);
+
+}
+
+.menu .btn{
+
+color:white;
+
+}
+
+/* =========================
+BUTTONS
+========================= */
+
+.btn{
+
+display:inline-flex;
+
+align-items:center;
+
+justify-content:center;
+
+padding:14px 24px;
+
+border-radius:30px;
+
+font-size:14px;
+
+font-weight:600;
+
+transition:.3s;
+
+}
+
+.btn-primary{
+
+background:var(--verde);
+
+color:white;
+
+}
+
+.btn-primary:hover{
+
+background:var(--verde-escuro);
+
+transform:translateY(-2px);
+
+}
+
+.btn-light{
+
+background:white;
+
+color:var(--verde-escuro);
+
+}
+
+.btn-light:hover{
+
+transform:translateY(-2px);
+
+}
+
+/* =========================
+HERO
+========================= */
+
+.hero{
+
+min-height:750px;
+
+display:flex;
+
+align-items:center;
+
+position:relative;
+
+overflow:hidden;
+
+background:
+
+linear-gradient(
+90deg,
+rgba(238,246,243,.98) 0%,
+rgba(238,246,243,.92) 42%,
+rgba(238,246,243,.25) 75%,
+rgba(238,246,243,.05) 100%
+),
+
+url("https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1800&q=85");
+
+background-size:cover;
+
+background-position:center;
+
+}
+
+.hero-content{
+
+width:600px;
+
+padding-top:70px;
+
+position:relative;
+
+z-index:2;
+
+}
+
+.tag{
+
+display:inline-block;
+
+font-size:12px;
+
+font-weight:700;
+
+letter-spacing:2px;
+
+text-transform:uppercase;
+
+color:var(--verde);
+
+margin-bottom:20px;
+
+}
+
+.hero h1{
+
+font-family:'Playfair Display',serif;
+
+font-size:clamp(48px,6vw,76px);
+
+line-height:1.05;
+
+color:var(--verde-escuro);
+
+margin-bottom:25px;
+
+font-weight:600;
+
+}
+
+.hero h1 span{
+
+color:var(--verde);
+
+}
+
+.hero p{
+
+font-size:18px;
+
+color:#5f6f6b;
+
+max-width:540px;
+
+margin-bottom:35px;
+
+}
+
+.hero-buttons{
+
+display:flex;
+
+gap:15px;
+
+flex-wrap:wrap;
+
+}
+
+/* =========================
+INTRO
+========================= */
+
+.intro{
+
+padding:100px 0;
+
+text-align:center;
+
+}
+
+.label{
+
+font-size:12px;
+
+font-weight:700;
+
+letter-spacing:2px;
+
+text-transform:uppercase;
+
+color:var(--verde);
+
+margin-bottom:15px;
+
+}
+
+.intro h2,
+.services h2,
+.about h2,
+.cta h2,
+.contact h2{
+
+font-family:'Playfair Display',serif;
+
+font-size:clamp(35px,4vw,52px);
+
+line-height:1.15;
+
+color:var(--verde-escuro);
+
+margin-bottom:20px;
+
+}
+
+.intro p{
+
+max-width:700px;
+
+margin:auto;
+
+color:var(--cinza);
+
+font-size:17px;
+
+}
+
+/* =========================
+SERVICES
+========================= */
+
+.services{
+
+padding:100px 0;
+
+background:var(--bege);
+
+}
+
+.services-heading{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:end;
+
+gap:50px;
+
+margin-bottom:50px;
+
+}
+
+.services-heading p{
+
+max-width:420px;
+
+color:var(--cinza);
+
+}
+
+.services-grid{
+
+display:grid;
+
+grid-template-columns:repeat(4,1fr);
+
+gap:20px;
+
+}
+
+.service{
+
+background:white;
+
+border-radius:18px;
+
+overflow:hidden;
+
+transition:.3s;
+
+box-shadow:0 5px 20px rgba(0,0,0,.03);
+
+}
+
+.service:hover{
+
+transform:translateY(-7px);
+
+box-shadow:0 18px 35px rgba(45,80,70,.12);
+
+}
+
+.service-img{
+
+height:170px;
+
+overflow:hidden;
+
+}
+
+.service-img img{
+
+width:100%;
+
+height:100%;
+
+object-fit:cover;
+
+transition:.5s;
+
+}
+
+.service:hover img{
+
+transform:scale(1.06);
+
+}
+
+.service-content{
+
+padding:24px;
+
+}
+
+.service h3{
+
+font-size:18px;
+
+color:var(--verde-escuro);
+
+margin-bottom:8px;
+
+}
+
+.service p{
+
+font-size:14px;
+
+color:var(--cinza);
+
+}
+
+/* =========================
+ABOUT
+========================= */
+
+.about{
+
+padding:110px 0;
+
+}
+
+.about-grid{
+
+display:grid;
+
+grid-template-columns:1fr 1fr;
+
+gap:80px;
+
+align-items:center;
+
+}
+
+.about-image{
+
+height:540px;
+
+border-radius:22px;
+
+overflow:hidden;
+
+}
+
+.about-image img{
+
+width:100%;
+
+height:100%;
+
+object-fit:cover;
+
+}
+
+.about-text p{
+
+color:var(--cinza);
+
+margin-bottom:20px;
+
+font-size:16px;
+
+}
+
+.benefits{
+
+display:grid;
+
+grid-template-columns:1fr 1fr;
+
+gap:18px;
+
+margin-top:35px;
+
+}
+
+.benefit{
+
+display:flex;
+
+align-items:center;
+
+gap:12px;
+
+font-size:14px;
+
+font-weight:600;
+
+}
+
+.check{
+
+width:28px;
+
+height:28px;
+
+border-radius:50%;
+
+background:var(--verde-claro);
+
+color:var(--verde);
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+}
+
+/* =========================
+BANNER
+========================= */
+
+.banner{
+
+padding:100px 0;
+
+background:
+
+linear-gradient(
+rgba(31,80,73,.88),
+rgba(31,80,73,.88)
+),
+
+url("https://images.unsplash.com/photo-1559757175-0eb30cd8c063?auto=format&fit=crop&w=1800&q=85");
+
+background-size:cover;
+
+background-position:center;
+
+text-align:center;
+
+color:white;
+
+}
+
+.banner h2{
+
+font-family:'Playfair Display',serif;
+
+font-size:clamp(36px,5vw,55px);
+
+margin-bottom:20px;
+
+}
+
+.banner p{
+
+max-width:600px;
+
+margin:0 auto 30px;
+
+color:#dce9e5;
+
+}
+
+/* =========================
+CONTACT
+========================= */
+
+.contact{
+
+padding:100px 0;
+
+text-align:center;
+
+}
+
+.contact p{
+
+color:var(--cinza);
+
+}
+
+.phones{
+
+display:flex;
+
+justify-content:center;
+
+gap:20px;
+
+margin-top:30px;
+
+flex-wrap:wrap;
+
+}
+
+.phone{
+
+padding:15px 25px;
+
+border-radius:30px;
+
+background:var(--verde-claro);
+
+color:var(--verde-escuro);
+
+font-weight:600;
+
+transition:.3s;
+
+}
+
+.phone:hover{
+
+background:var(--verde);
+
+color:white;
+
+}
+
+/* =========================
+FOOTER
+========================= */
+
+footer{
+
+background:#193d37;
+
+color:#dce7e3;
+
+padding:35px 0;
+
+text-align:center;
+
+font-size:13px;
+
+}
+
+.footer-logo{
+
+margin-bottom:10px;
+
+}
+
+.footer-logo img{
+
+width:100px;
+
+filter:brightness(0) invert(1);
+
+}
+
+/* =========================
+WHATSAPP
+========================= */
+
+.whatsapp{
+
+position:fixed;
+
+right:24px;
+
+bottom:24px;
+
+width:60px;
+
+height:60px;
+
+border-radius:50%;
+
+background:#25D366;
+
+color:white;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+font-size:25px;
+
+box-shadow:0 8px 25px rgba(0,0,0,.2);
+
+z-index:100;
+
+transition:.3s;
+
+}
+
+.whatsapp:hover{
+
+transform:scale(1.08);
+
+}
+
+/* =========================
+MOBILE
+========================= */
+
+@media(max-width:900px){
+
+.menu{
+
+display:none;
+
+}
+
+.hero{
+
+min-height:720px;
+
+background:
+
+linear-gradient(
+90deg,
+rgba(238,246,243,.96),
+rgba(238,246,243,.70)
+),
+
+url("https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1200&q=85");
+
+background-position:center;
+
+}
+
+.hero-content{
+
+width:100%;
+
+}
+
+.services-grid{
+
+grid-template-columns:1fr 1fr;
+
+}
+
+.about-grid{
+
+grid-template-columns:1fr;
+
+gap:40px;
+
+}
+
+.about-image{
+
+height:400px;
+
+}
+
+.services-heading{
+
+display:block;
+
+}
+
+.services-heading p{
+
+margin-top:20px;
+
+}
+
+}
+
+@media(max-width:600px){
+
+header{
+
+padding:15px 0;
+
+}
+
+.logo img{
+
+width:85px;
+
+}
+
+.hero{
+
+min-height:700px;
+
+}
+
+.hero h1{
+
+font-size:45px;
+
+}
+
+.hero p{
+
+font-size:16px;
+
+}
+
+.hero-buttons{
+
+flex-direction:column;
+
+align-items:stretch;
+
+}
+
+.hero-buttons .btn{
+
+width:100%;
+
+}
+
+.services-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.benefits{
+
+grid-template-columns:1fr;
+
+}
+
+.intro,
+.services,
+.about,
+.contact{
+
+padding:75px 0;
+
+}
+
+.banner{
+
+padding:75px 0;
+
+}
+
+.service-img{
+
+height:210px;
+
+}
+
+}
+
+</style>
+
 </head>
+
 
 <body>
 
+
+<!-- HEADER -->
+
 <header>
 
-    <div class="container nav">
+<div class="container nav">
 
-        <a href="#" class="logo">
-            Saúde Corpo & Mente
-            <span>Clínica Integrada</span>
-        </a>
+<a href="#inicio" class="logo">
 
-        <nav class="menu">
-            <a href="#inicio">Início</a>
-            <a href="#especialidades">Especialidades</a>
-            <a href="#clinica">A Clínica</a>
-            <a href="#contato">Contato</a>
+<img src="images/logo.png" alt="Saúde Corpo & Mente">
 
-            <a
-                href="https://wa.me/5515991668565"
-                target="_blank"
-                class="btn-header">
-                Agendar atendimento
-            </a>
-        </nav>
+</a>
 
-    </div>
+<nav class="menu">
+
+<a href="#inicio">Início</a>
+
+<a href="#especialidades">Especialidades</a>
+
+<a href="#clinica">A Clínica</a>
+
+<a href="#contato">Contato</a>
+
+<a
+href="https://wa.me/5515991668565"
+target="_blank"
+class="btn btn-primary">
+
+Agendar atendimento
+
+</a>
+
+</nav>
+
+</div>
 
 </header>
 
 
-<main>
+<!-- HERO -->
 
-    <!-- HERO -->
+<section class="hero" id="inicio">
 
-    <section class="hero" id="inicio">
+<div class="container">
 
-        <div class="container">
+<div class="hero-content">
 
-            <div class="hero-content">
+<div class="tag">
 
-                <span class="tag">
-                    Saúde • Equilíbrio • Bem-estar
-                </span>
+Saúde • Equilíbrio • Bem-estar
 
-                <h1>
-                    Cuide do seu
-                    <em>corpo.</em><br>
+</div>
 
-                    Cuide da sua
-                    <em>mente.</em>
-                </h1>
+<h1>
 
-                <p>
-                    Na Saúde Corpo & Mente você encontra diferentes
-                    especialidades para cuidar da sua saúde de forma
-                    completa, acolhedora e personalizada.
-                </p>
+Cuidar do seu
 
-                <div class="buttons">
+<span>corpo</span>.
 
-                    <a
-                        href="https://wa.me/5515991668565"
-                        target="_blank"
-                        class="btn btn-primary">
+<br>
 
-                        Agende seu atendimento
+Cuidar da sua
 
-                    </a>
+<span>mente</span>.
 
-                    <a
-                        href="#especialidades"
-                        class="btn btn-secondary">
+</h1>
 
-                        Conheça nossas especialidades
+<p>
 
-                    </a>
+Um espaço completo para cuidar da sua saúde,
+bem-estar e qualidade de vida com atendimento
+personalizado e diferentes especialidades.
 
-                </div>
+</p>
 
-            </div>
+<div class="hero-buttons">
 
-        </div>
+<a
+href="https://wa.me/5515991668565?text=Olá!%20Gostaria%20de%20agendar%20um%20atendimento%20na%20Saúde%20Corpo%20%26%20Mente."
+target="_blank"
+class="btn btn-primary">
 
-        <div class="hero-decoration"></div>
-        <div class="hero-card"></div>
+Agende seu atendimento
 
-    </section>
+</a>
 
+<a href="#especialidades" class="btn btn-light">
 
-    <!-- INTRO -->
+Conheça nossas especialidades
 
-    <section class="intro">
+</a>
 
-        <div class="container">
+</div>
 
-            <div class="section-label">
-                Saúde Corpo & Mente
-            </div>
+</div>
 
-            <h2>
-                Um espaço dedicado ao seu bem-estar
-            </h2>
+</div>
 
-            <p>
-                Reunimos diferentes profissionais e especialidades
-                para oferecer cuidado, prevenção, tratamento e
-                qualidade de vida em um só lugar.
-            </p>
+</section>
 
-        </div>
 
-    </section>
+<!-- INTRO -->
 
+<section class="intro">
 
-    <!-- ESPECIALIDADES -->
+<div class="container">
 
-    <section class="services" id="especialidades">
+<div class="label">
 
-        <div class="container">
+Saúde Corpo & Mente
 
-            <div class="services-heading">
+</div>
 
-                <div>
+<h2>
 
-                    <div class="section-label">
-                        Nossas especialidades
-                    </div>
+Um espaço dedicado a você
 
-                    <h2>
-                        Cuidado completo<br>
-                        para você
-                    </h2>
+</h2>
 
-                </div>
+<p>
 
-                <p>
-                    Encontre o atendimento que combina com suas
-                    necessidades e dê o primeiro passo para cuidar
-                    melhor de você.
-                </p>
+Cuidar da saúde é olhar para o todo.
+Na Saúde Corpo & Mente você encontra diferentes
+áreas de atendimento em um ambiente acolhedor,
+profissional e pensado para o seu bem-estar.
 
-            </div>
+</p>
 
+</div>
 
-            <div class="services-grid">
+</section>
 
 
-                <div class="service-card">
+<!-- ESPECIALIDADES -->
 
-                    <div class="service-icon">
-                        🪡
-                    </div>
+<section class="services" id="especialidades">
 
-                    <h3>
-                        Acupuntura
-                    </h3>
+<div class="container">
 
-                    <p>
-                        Técnicas terapêuticas voltadas ao equilíbrio,
-                        relaxamento e bem-estar.
-                    </p>
+<div class="services-heading">
 
-                </div>
+<div>
 
+<div class="label">
 
-                <div class="service-card">
+Nossas especialidades
 
-                    <div class="service-icon">
-                        🦴
-                    </div>
+</div>
 
-                    <h3>
-                        Fisioterapia
-                    </h3>
+<h2>
 
-                    <p>
-                        Tratamento e prevenção para melhorar seus
-                        movimentos e qualidade de vida.
-                    </p>
+Cuidado completo<br>
+para corpo e mente
 
-                </div>
+</h2>
 
+</div>
 
-                <div class="service-card">
+<p>
 
-                    <div class="service-icon">
-                        🧘
-                    </div>
+Conte com profissionais de diferentes áreas
+para encontrar o cuidado que melhor atende
+às suas necessidades.
 
-                    <h3>
-                        Pilates
-                    </h3>
+</p>
 
-                    <p>
-                        Exercícios para fortalecimento, mobilidade,
-                        postura e consciência corporal.
-                    </p>
+</div>
 
-                </div>
 
+<div class="services-grid">
 
-                <div class="service-card">
 
-                    <div class="service-icon">
-                        🤲
-                    </div>
+<!-- ACUPUNTURA -->
 
-                    <h3>
-                        Osteopatia
-                    </h3>
+<div class="service">
 
-                    <p>
-                        Abordagem manual que busca melhorar o
-                        funcionamento e equilíbrio do corpo.
-                    </p>
+<div class="service-img">
 
-                </div>
+<img
+src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=800&q=85"
+alt="Acupuntura">
 
+</div>
 
-                <div class="service-card">
+<div class="service-content">
 
-                    <div class="service-icon">
-                        🧠
-                    </div>
+<h3>Acupuntura</h3>
 
-                    <h3>
-                        Psicologia
-                    </h3>
+<p>
+Técnicas terapêuticas para promover equilíbrio,
+relaxamento e bem-estar.
+</p>
 
-                    <p>
-                        Um espaço de acolhimento para cuidar da
-                        saúde emocional e do autoconhecimento.
-                    </p>
+</div>
 
-                </div>
+</div>
 
 
-                <div class="service-card">
+<!-- FISIOTERAPIA -->
 
-                    <div class="service-icon">
-                        🌿
-                    </div>
+<div class="service">
 
-                    <h3>
-                        Terapia
-                    </h3>
+<div class="service-img">
 
-                    <p>
-                        Atendimento com foco em Constelação Familiar,
-                        reflexão e novas perspectivas.
-                    </p>
+<img
+src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=800&q=85"
+alt="Fisioterapia">
 
-                </div>
+</div>
 
+<div class="service-content">
 
-                <div class="service-card">
+<h3>Fisioterapia</h3>
 
-                    <div class="service-icon">
-                        🦶
-                    </div>
+<p>
+Tratamento e prevenção para melhorar movimentos,
+função e qualidade de vida.
+</p>
 
-                    <h3>
-                        Podologia
-                    </h3>
+</div>
 
-                    <p>
-                        Cuidados especializados para a saúde,
-                        conforto e bem-estar dos seus pés.
-                    </p>
+</div>
 
-                </div>
 
+<!-- PILATES -->
 
-                <div class="service-card">
+<div class="service">
 
-                    <div class="service-icon">
-                        🥗
-                    </div>
+<div class="service-img">
 
-                    <h3>
-                        Nutrição
-                    </h3>
+<img
+src="https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=800&q=85"
+alt="Pilates">
 
-                    <p>
-                        Orientação alimentar personalizada para
-                        uma rotina mais saudável e equilibrada.
-                    </p>
+</div>
 
-                </div>
+<div class="service-content">
 
-            </div>
+<h3>Pilates</h3>
 
-        </div>
+<p>
+Fortalecimento, mobilidade, postura e consciência
+corporal.
+</p>
 
-    </section>
+</div>
 
+</div>
 
-    <!-- SOBRE -->
 
-    <section class="about" id="clinica">
+<!-- OSTEOPATIA -->
 
-        <div class="container about-grid">
+<div class="service">
 
-            <div class="about-image"></div>
+<div class="service-img">
 
-            <div class="about-text">
+<img
+src="https://images.unsplash.com/photo-1559757175-0eb30cd8c063?auto=format&fit=crop&w=800&q=85"
+alt="Osteopatia">
 
-                <div class="section-label">
-                    Sobre nós
-                </div>
+</div>
 
-                <h2>
-                    Cuidar de você por inteiro.
-                </h2>
+<div class="service-content">
 
-                <p>
-                    A Saúde Corpo & Mente nasceu com o propósito de
-                    proporcionar um atendimento mais completo,
-                    reunindo diferentes áreas da saúde e do bem-estar
-                    em um ambiente acolhedor.
-                </p>
+<h3>Osteopatia</h3>
 
-                <p>
-                    Cada pessoa possui necessidades diferentes.
-                    Por isso, valorizamos um olhar individualizado
-                    e profissionais preparados para acompanhar
-                    cada etapa da sua jornada.
-                </p>
+<p>
+Abordagem manual voltada ao equilíbrio e
+funcionamento do corpo.
+</p>
 
-                <div class="benefits">
+</div>
 
-                    <div class="benefit">
-                        <div class="check">✓</div>
-                        Atendimento personalizado
-                    </div>
+</div>
 
-                    <div class="benefit">
-                        <div class="check">✓</div>
-                        Ambiente acolhedor
-                    </div>
 
-                    <div class="benefit">
-                        <div class="check">✓</div>
-                        Diversas especialidades
-                    </div>
+<!-- PSICOLOGIA -->
 
-                    <div class="benefit">
-                        <div class="check">✓</div>
-                        Profissionais especializados
-                    </div>
+<div class="service">
 
-                </div>
+<div class="service-img">
 
-            </div>
+<img
+src="https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=800&q=85"
+alt="Psicologia">
 
-        </div>
+</div>
 
-    </section>
+<div class="service-content">
 
+<h3>Psicologia</h3>
 
-    <!-- CTA -->
+<p>
+Um espaço de acolhimento para cuidar da saúde
+emocional e do autoconhecimento.
+</p>
 
-    <section class="cta">
+</div>
 
-        <div class="container">
+</div>
 
-            <div class="section-label">
-                Comece hoje
-            </div>
 
-            <h2>
-                Seu bem-estar merece atenção.
-            </h2>
+<!-- TERAPIA -->
 
-            <p>
-                Entre em contato com a Saúde Corpo & Mente
-                e encontre o atendimento ideal para você.
-            </p>
+<div class="service">
 
-            <a
-                href="https://wa.me/5515991668565"
-                target="_blank"
-                class="btn">
+<div class="service-img">
 
-                Falar pelo WhatsApp
+<img
+src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=800&q=85"
+alt="Terapia">
 
-            </a>
+</div>
 
-        </div>
+<div class="service-content">
 
-    </section>
+<h3>Terapia</h3>
 
+<p>
+Atendimento com foco em Constelação Familiar,
+reflexão e novas perspectivas.
+</p>
 
-    <!-- CONTATO -->
+</div>
 
-    <section class="contact" id="contato">
+</div>
 
-        <div class="container">
 
-            <div class="section-label">
-                Entre em contato
-            </div>
+<!-- PODOLOGIA -->
 
-            <h2>
-                Agende seu atendimento
-            </h2>
+<div class="service">
 
-            <p>
-                Fale conosco pelos telefones:
-            </p>
+<div class="service-img">
 
-            <div class="phones">
+<img
+src="https://images.unsplash.com/photo-1580281658223-9b93f18ae9ae?auto=format&fit=crop&w=800&q=85"
+alt="Podologia">
 
-                <a
-                    href="tel:+5515991668565"
-                    class="phone">
+</div>
 
-                    📱 (15) 99166-8565
+<div class="service-content">
 
-                </a>
+<h3>Podologia</h3>
 
-                <a
-                    href="tel:+551535272455"
-                    class="phone">
+<p>
+Cuidados especializados para a saúde e o conforto
+dos seus pés.
+</p>
 
-                    ☎️ (15) 3527-2455
+</div>
 
-                </a>
+</div>
 
-            </div>
 
-        </div>
+<!-- NUTRIÇÃO -->
 
-    </section>
+<div class="service">
 
-</main>
+<div class="service-img">
 
+<img
+src="https://images.unsplash.com/photo-1498837167922-ddd27525d352?auto=format&fit=crop&w=800&q=85"
+alt="Nutrição">
+
+</div>
+
+<div class="service-content">
+
+<h3>Nutrição</h3>
+
+<p>
+Orientação alimentar personalizada para uma
+rotina mais saudável e equilibrada.
+</p>
+
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- SOBRE -->
+
+<section class="about" id="clinica">
+
+<div class="container about-grid">
+
+<div class="about-image">
+
+<img
+src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?auto=format&fit=crop&w=1000&q=85"
+alt="Ambiente de atendimento">
+
+</div>
+
+
+<div class="about-text">
+
+<div class="label">
+
+Sobre a clínica
+
+</div>
+
+<h2>
+
+Cuidar de você por inteiro.
+
+</h2>
+
+<p>
+
+A Saúde Corpo & Mente reúne diferentes
+especialidades para proporcionar uma experiência
+de cuidado mais completa.
+
+</p>
+
+<p>
+
+Nosso objetivo é oferecer um ambiente acolhedor,
+onde cada pessoa possa encontrar profissionais
+e serviços voltados às suas necessidades.
+
+</p>
+
+
+<div class="benefits">
+
+<div class="benefit">
+
+<div class="check">✓</div>
+
+Atendimento personalizado
+
+</div>
+
+<div class="benefit">
+
+<div class="check">✓</div>
+
+Ambiente acolhedor
+
+</div>
+
+<div class="benefit">
+
+<div class="check">✓</div>
+
+Diversas especialidades
+
+</div>
+
+<div class="benefit">
+
+<div class="check">✓</div>
+
+Cuidado integrado
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- BANNER -->
+
+<section class="banner">
+
+<div class="container">
+
+<h2>
+
+Seu bem-estar merece atenção.
+
+</h2>
+
+<p>
+
+Dê o primeiro passo para cuidar melhor de você.
+Entre em contato com a Saúde Corpo & Mente.
+
+</p>
+
+<a
+href="https://wa.me/5515991668565?text=Olá!%20Gostaria%20de%20conhecer%20os%20serviços%20da%20Saúde%20Corpo%20%26%20Mente."
+target="_blank"
+class="btn btn-light">
+
+Falar pelo WhatsApp
+
+</a>
+
+</div>
+
+</section>
+
+
+<!-- CONTATO -->
+
+<section class="contact" id="contato">
+
+<div class="container">
+
+<div class="label">
+
+Entre em contato
+
+</div>
+
+<h2>
+
+Agende seu atendimento
+
+</h2>
+
+<p>
+
+Fale conosco e encontre o atendimento ideal
+para você.
+
+</p>
+
+
+<div class="phones">
+
+<a
+href="https://wa.me/5515991668565"
+target="_blank"
+class="phone">
+
+📱 (15) 99166-8565
+
+</a>
+
+<a
+href="tel:+551535272455"
+class="phone">
+
+☎️ (15) 3527-2455
+
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- FOOTER -->
 
 <footer>
 
-    <div class="container">
+<div class="container">
 
-        © 2026 Saúde Corpo & Mente — Todos os direitos reservados.
+<div class="footer-logo">
 
-    </div>
+<img
+src="images/logo.png"
+alt="Saúde Corpo & Mente">
+
+</div>
+
+© 2026 Saúde Corpo & Mente — Todos os direitos reservados.
+
+</div>
 
 </footer>
 
 
-<a
-    href="https://wa.me/5515991668565"
-    target="_blank"
-    class="whatsapp"
-    aria-label="Falar pelo WhatsApp">
+<!-- WHATSAPP -->
 
-    ☎
+<a
+href="https://wa.me/5515991668565?text=Olá!%20Gostaria%20de%20agendar%20um%20atendimento."
+target="_blank"
+class="whatsapp"
+aria-label="WhatsApp">
+
+💬
 
 </a>
 
+
 </body>
+
 </html>
