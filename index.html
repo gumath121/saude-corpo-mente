@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -69,6 +70,7 @@ width:min(1150px,90%);
 margin:auto;
 
 }
+
 
 /* =========================
 HEADER
@@ -150,6 +152,7 @@ color:white;
 
 }
 
+
 /* =========================
 BUTTONS
 ========================= */
@@ -203,6 +206,7 @@ color:var(--verde-escuro);
 transform:translateY(-2px);
 
 }
+
 
 /* =========================
 HERO
@@ -312,6 +316,7 @@ flex-wrap:wrap;
 
 }
 
+
 /* =========================
 INTRO
 ========================= */
@@ -369,6 +374,7 @@ color:var(--cinza);
 font-size:17px;
 
 }
+
 
 /* =========================
 SERVICES
@@ -486,6 +492,7 @@ color:var(--cinza);
 
 }
 
+
 /* =========================
 ABOUT
 ========================= */
@@ -584,6 +591,94 @@ justify-content:center;
 
 }
 
+
+/* =========================
+GALERIA DA CLÍNICA
+========================= */
+
+.gallery{
+
+padding:110px 0;
+
+background:var(--bege);
+
+text-align:center;
+
+}
+
+.gallery h2{
+
+font-family:'Playfair Display',serif;
+
+font-size:clamp(35px,4vw,52px);
+
+line-height:1.15;
+
+color:var(--verde-escuro);
+
+margin-bottom:15px;
+
+}
+
+.gallery-intro{
+
+max-width:650px;
+
+margin:0 auto 45px;
+
+color:var(--cinza);
+
+font-size:16px;
+
+}
+
+.gallery-grid{
+
+display:grid;
+
+grid-template-columns:1.5fr 1fr 1fr;
+
+gap:20px;
+
+}
+
+.gallery-item{
+
+height:300px;
+
+border-radius:20px;
+
+overflow:hidden;
+
+box-shadow:0 8px 25px rgba(0,0,0,.08);
+
+}
+
+.gallery-item img{
+
+width:100%;
+
+height:100%;
+
+object-fit:cover;
+
+transition:.5s;
+
+}
+
+.gallery-item:hover img{
+
+transform:scale(1.05);
+
+}
+
+.gallery-large{
+
+height:300px;
+
+}
+
+
 /* =========================
 BANNER
 ========================= */
@@ -630,6 +725,7 @@ margin:0 auto 30px;
 color:#dce9e5;
 
 }
+
 
 /* =========================
 CONTACT
@@ -687,6 +783,7 @@ color:white;
 
 }
 
+
 /* =========================
 FOOTER
 ========================= */
@@ -718,6 +815,7 @@ width:100px;
 filter:brightness(0) invert(1);
 
 }
+
 
 /* =========================
 WHATSAPP
@@ -762,6 +860,7 @@ transition:.3s;
 transform:scale(1.08);
 
 }
+
 
 /* =========================
 MOBILE
@@ -831,6 +930,18 @@ margin-top:20px;
 
 }
 
+.gallery-grid{
+
+grid-template-columns:1fr 1fr;
+
+}
+
+.gallery-large{
+
+grid-column:1 / -1;
+
+}
+
 }
 
 @media(max-width:600px){
@@ -894,7 +1005,8 @@ grid-template-columns:1fr;
 .intro,
 .services,
 .about,
-.contact{
+.contact,
+.gallery{
 
 padding:75px 0;
 
@@ -912,6 +1024,25 @@ height:210px;
 
 }
 
+.gallery-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.gallery-large{
+
+grid-column:auto;
+
+}
+
+.gallery-item,
+.gallery-large{
+
+height:260px;
+
+}
+
 }
 
 </style>
@@ -922,7 +1053,9 @@ height:210px;
 <body>
 
 
-<!-- HEADER -->
+<!-- =========================
+HEADER
+========================= -->
 
 <header>
 
@@ -930,7 +1063,7 @@ height:210px;
 
 <a href="#inicio" class="logo">
 
-<img src="images/logo.png" alt="Saúde Corpo & Mente">
+<img src="imagem/logo.png" alt="Saúde Corpo & Mente">
 
 </a>
 
@@ -960,7 +1093,9 @@ Agendar atendimento
 </header>
 
 
-<!-- HERO -->
+<!-- =========================
+HERO
+========================= -->
 
 <section class="hero" id="inicio">
 
@@ -1022,7 +1157,9 @@ Conheça nossas especialidades
 </section>
 
 
-<!-- INTRO -->
+<!-- =========================
+INTRO
+========================= -->
 
 <section class="intro">
 
@@ -1054,7 +1191,9 @@ profissional e pensado para o seu bem-estar.
 </section>
 
 
-<!-- ESPECIALIDADES -->
+<!-- =========================
+ESPECIALIDADES
+========================= -->
 
 <section class="services" id="especialidades">
 
@@ -1308,7 +1447,9 @@ rotina mais saudável e equilibrada.
 </section>
 
 
-<!-- SOBRE -->
+<!-- =========================
+SOBRE
+========================= -->
 
 <section class="about" id="clinica">
 
@@ -1317,8 +1458,8 @@ rotina mais saudável e equilibrada.
 <div class="about-image">
 
 <img
-src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?auto=format&fit=crop&w=1000&q=85"
-alt="Ambiente de atendimento">
+src="imagem/sala.jpg"
+alt="Ambiente da Saúde Corpo & Mente">
 
 </div>
 
@@ -1397,7 +1538,74 @@ Cuidado integrado
 </section>
 
 
-<!-- BANNER -->
+<!-- =========================
+GALERIA
+========================= -->
+
+<section class="gallery">
+
+<div class="container">
+
+<div class="label">
+
+Conheça nosso espaço
+
+</div>
+
+<h2>
+
+Um ambiente preparado para cuidar de você
+
+</h2>
+
+<p class="gallery-intro">
+
+Conheça um pouco da Saúde Corpo & Mente e dos espaços
+preparados para oferecer acolhimento, conforto e bem-estar.
+
+</p>
+
+
+<div class="gallery-grid">
+
+
+<div class="gallery-item gallery-large">
+
+<img
+src="imagem/fachada.jpg"
+alt="Fachada da Saúde Corpo & Mente">
+
+</div>
+
+
+<div class="gallery-item">
+
+<img
+src="imagem/sala.jpg"
+alt="Sala da Saúde Corpo & Mente">
+
+</div>
+
+
+<div class="gallery-item">
+
+<img
+src="imagem/placa.jpg"
+alt="Placa da Saúde Corpo & Mente">
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+BANNER
+========================= -->
 
 <section class="banner">
 
@@ -1430,7 +1638,9 @@ Falar pelo WhatsApp
 </section>
 
 
-<!-- CONTATO -->
+<!-- =========================
+CONTATO
+========================= -->
 
 <section class="contact" id="contato">
 
@@ -1482,7 +1692,9 @@ class="phone">
 </section>
 
 
-<!-- FOOTER -->
+<!-- =========================
+FOOTER
+========================= -->
 
 <footer>
 
@@ -1491,7 +1703,7 @@ class="phone">
 <div class="footer-logo">
 
 <img
-src="images/logo.png"
+src="imagem/logo.png"
 alt="Saúde Corpo & Mente">
 
 </div>
@@ -1503,7 +1715,9 @@ alt="Saúde Corpo & Mente">
 </footer>
 
 
-<!-- WHATSAPP -->
+<!-- =========================
+WHATSAPP
+========================= -->
 
 <a
 href="https://wa.me/5515991668565?text=Olá!%20Gostaria%20de%20agendar%20um%20atendimento."
@@ -1519,3 +1733,4 @@ aria-label="WhatsApp">
 </body>
 
 </html>
+```
